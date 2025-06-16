@@ -19,7 +19,7 @@ public class ConverteDados implements IConverteDados{
     }
 
     @Override
-    public <T> List<T> obeterLista(String json, Class<T> classe) {
+    public <T> List<T> obterLista(String json, Class<T> classe) {
         CollectionType lista = mapper.getTypeFactory()
                 .constructCollectionType(List.class, classe);
         try {

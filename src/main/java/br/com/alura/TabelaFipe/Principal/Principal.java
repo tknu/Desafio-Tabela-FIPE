@@ -41,7 +41,7 @@ public class Principal {
         var json = consumo.obterDados(endereco);
         System.out.println(json);
 
-        var marcas = conversor.obeterLista(json, Dados.class);
+        var marcas = conversor.obterLista(json, Dados.class);
         marcas.stream()
                 .sorted(Comparator.comparing(Dados::nome))
                 .forEach(System.out::println);
@@ -49,7 +49,7 @@ public class Principal {
         System.out.println("Informe o código da marca para consulta: ");
         var codigoMarca = leitura.nextLine();
 
-        endereco = endereco + "/" + codigoMarca + "/modelos";
+        endereco = endereco + codigoMarca + "/modelos/";
         json = consumo.obterDados(endereco);
         var modeloLista = conversor.obterDados(json, Modelos.class);
 
